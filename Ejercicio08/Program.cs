@@ -15,7 +15,7 @@ namespace Ejercicio08
 
 
             #region variables auxiliares para empleado
-            Empleado auxEmpleado = new Empleado();
+            
             Int32 auxValorHora;
             Int32 auxAntiguedad;
             Int32 auxHorasTrabajadasPorMes;
@@ -38,6 +38,7 @@ namespace Ejercicio08
 
             for(int i = 0; i<cantidadEmpleados;i++)
             {
+                Empleado auxEmpleado = new Empleado();//la direccion de memoria se guarda en la linked list, por lo que se destruye este objeto cada vez que itera y no se deberia perder la informacion
                 //pido los datos
                 Console.WriteLine("Ingrese el nombre del empleado cuyo id será: {0}", i+1);
                 auxNombre = Console.ReadLine();
@@ -58,7 +59,8 @@ namespace Ejercicio08
                 auxEmpleado.antiguedad = auxAntiguedad;
                 auxEmpleado.horasTrabajadasPorMes = auxHorasTrabajadasPorMes;
                 auxEmpleado.importeAPagar = auxImporteAPagar;
-
+                
+                
                 listaEmpleados.AddLast(auxEmpleado);
             }
 
